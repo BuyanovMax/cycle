@@ -14,7 +14,14 @@ public class Main {
         task11();
         task12();
         task13();
+        task14();
+        task15();
+        task16();
+        task17();
+        task18();
+
     }
+
 
     private static void task1() {
         System.out.println("Задача 1");
@@ -121,7 +128,7 @@ public class Main {
         }
         System.out.println();
         number = 11;
-        for (int i = 0; i < 10;i++) {
+        for (int i = 0; i < 10; i++) {
             number = number - 1;
             System.out.print(number + " ");
         }
@@ -129,12 +136,11 @@ public class Main {
     }
 
 
-
     private static void task13() {
         System.out.println("Задача 13");
         int population = 12_000_000;
-        int birthrate = 17 * (population/1000);
-        int deathRate = 8 * (population/1000);
+        int birthrate = 17 * (population / 1000);
+        int deathRate = 8 * (population / 1000);
         int populationIncrease = birthrate - deathRate;
         int year = 0;
         while (year < 10) {
@@ -142,6 +148,75 @@ public class Main {
             population = population + populationIncrease;
             populationIncrease = populationIncrease + (population / 1000);
             System.out.println("Год " + year + ", численность населения составляет " + population);
+        }
+    }
+
+    private static void task14() {
+        System.out.println("Задача 14");
+        double accumulation = 15_000;
+        double persent = 0.07;
+        int i = 0;
+        for (; accumulation <= 12_000_000; i++) {
+            accumulation = accumulation + (accumulation * persent);
+            System.out.println(i + " месяцев и общая сумма " + accumulation);
+        }
+    }
+
+    private static void task15() {
+        System.out.println("Задача 15");
+        int accumulation = 15_000;
+        double total = 0;
+        double persent = 0.07;
+        int i = 0;
+        for (; total <= 12_000_000; i++) {
+            total = total + accumulation + (total * persent);
+            if (i % 6 == 0) {
+                System.out.println(i + " месяцев и общая сумма " + total);
+            }
+        }
+    }
+
+    private static void task16() {
+        System.out.println("Задача 16");
+        int accumulation = 15_000;
+        double total = 0;
+        double persent = 0.07;
+        int i = 0;
+        for (; i <= 9 * 12; i++) {
+            total = total + accumulation + (total * persent);
+            if (i % 6 == 0) {
+                System.out.println(i + " месяцев и общая сумма " + total);
+            }
+        }
+    }
+
+    private static void task17() {
+        System.out.println("Задача 17");
+        int friday =6;
+        int i;
+        for (i = 0; i <= 31; i++) {
+            if (i % 7 == 0&&friday<=31) {
+                System.out.println("Сегодня пятница, " + friday + "-е число. Необходимо подготовить отчет");
+                friday = friday + 7;
+            }
+        }
+    }
+
+    private static void task18() {
+        System.out.println("Задача 18");
+        int year = 2023;
+        int comet = 79;
+        int yearStart = year-200;
+        int yearEnd = year + 100;
+        while (yearStart <= yearEnd) {
+            yearStart = yearStart + 1;
+            if (yearStart % comet == 0 && yearStart <= year) {
+                System.out.println("Комета пролетала в "+yearStart+" году");
+            } else if (yearStart % comet == 0 && yearStart <= yearEnd) {
+                System.out.println("Комета пролетит в "+yearStart+" году");
+            }
+
+
         }
     }
 }
